@@ -13,7 +13,7 @@ source:
     - gdbm_gcc_10.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     # Please see ABI report
     # https://abi-laboratory.pro/index.php?view=timeline&l=gdbm
@@ -25,6 +25,7 @@ requirements:
     - libtool  # [unix]
     - {{ compiler('c') }}
     - make
+    - patch  # [not win]
   host:
     - readline
 
