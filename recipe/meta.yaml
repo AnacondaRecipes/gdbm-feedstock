@@ -13,7 +13,9 @@ source:
     - gdbm_gcc_10.patch
 
 build:
-  number: 2
+  number: 0
+  missing_dso_whitelist:  # [linux and s390x]
+    - $RPATH/ld64.so.1    # [linux and s390x]
   run_exports:
     # Please see ABI report
     # https://abi-laboratory.pro/index.php?view=timeline&l=gdbm
@@ -25,6 +27,7 @@ requirements:
     - libtool  # [unix]
     - {{ compiler('c') }}
     - make
+    - patch  # [not win]
   host:
     - readline
 
