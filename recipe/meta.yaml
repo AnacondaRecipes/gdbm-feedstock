@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: ftp://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha1: 0f1056ab3beb1bf09dad06f8083f2c79716a5b1b
+  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b8822cb4769e2d759c828c06f196614936c88c141c3132b18252fe25c2b635ce
   patches:
     # From https://github.com/spack/spack/commit/6d7daf0def6b8c432b5e79d48c96f29faf3d2db9
     - gdbm_gcc_10.patch
