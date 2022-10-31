@@ -25,10 +25,11 @@ build:
 
 requirements:
   build:
-    - libtool  # [unix]
+    - libtool   # [unix]
     - {{ compiler('c') }}
     - make
-    - patch  # [not win]
+    - patch     # [not win]
+    - m2-patch  # [win]
   host:
     - readline
 
