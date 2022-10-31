@@ -47,6 +47,8 @@ about:
   summary: >
     A library of database functions that use extensible hashing and works
     similar to the standard UNIX dbm functions.
+  doc_url: https://www.gnu.org.ua/software/gdbm/
+  dev_url: https://www.gnu.org.ua/software/gdbm/
 
 extra:
   recipe-maintainers:
