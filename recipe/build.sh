@@ -3,7 +3,8 @@
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 
 ./configure --prefix="${PREFIX}" \
-            --enable-static=no
+            --enable-static=no \
+            --enable-libgdbm-compat
 make -j${CPU_COUNT}
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
   make check
