@@ -11,9 +11,10 @@ source:
   patches:
     # From https://github.com/spack/spack/commit/6d7daf0def6b8c432b5e79d48c96f29faf3d2db9
     - gdbm_gcc_10.patch
+    - osx_arm64.patch   # [osx and arm64]
 
 build:
-  number: 0
+  number: 4
   missing_dso_whitelist:  # [linux and s390x]
     - $RPATH/ld64.so.1    # [linux and s390x]
   run_exports:

@@ -1,0 +1,12 @@
+Index: work/tests/closerr.c
+===================================================================
+--- work.orig/tests/closerr.c
++++ work/tests/closerr.c
+@@ -21,6 +21,7 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <assert.h>
++#include <unistd.h>
+ #include "gdbm.h"
+ 
+ int
