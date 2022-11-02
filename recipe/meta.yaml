@@ -6,14 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  url: ftp://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha1: 0f1056ab3beb1bf09dad06f8083f2c79716a5b1b
+  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b8822cb4769e2d759c828c06f196614936c88c141c3132b18252fe25c2b635ce
   patches:
     # From https://github.com/spack/spack/commit/6d7daf0def6b8c432b5e79d48c96f29faf3d2db9
     - gdbm_gcc_10.patch
+    - osx_arm64.patch   # [osx and arm64]
 
 build:
-  number: 0
+  number: 4
   missing_dso_whitelist:  # [linux and s390x]
     - $RPATH/ld64.so.1    # [linux and s390x]
   run_exports:
@@ -24,10 +25,11 @@ build:
 
 requirements:
   build:
-    - libtool  # [unix]
+    - libtool   # [unix]
     - {{ compiler('c') }}
     - make
-    - patch  # [not win]
+    - patch     # [not win]
+    - m2-patch  # [win]
   host:
     - readline
 
@@ -39,12 +41,21 @@ test:
 
 about:
   home: https://www.gnu.org.ua/software/gdbm/
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: COPYING
   summary: >
     A library of database functions that use extensible hashing and works
     similar to the standard UNIX dbm functions.
+  description: |
+    GNU dbm (or GDBM, for short) is a library of database functions that
+    use extensible hashing and work similar to the standard UNIX dbm. These
+    routines are provided to a programmer needing to create and manipulate
+    a hashed database.
+  license_url: https://git.gnu.org.ua/gdbm.git/tree/COPYING
+  doc_source_url: https://git.gnu.org.ua/gdbm.git/tree/
+  doc_url: https://git.gnu.org.ua/gdbm.git/tree/
+  dev_url: https://git.gnu.org.ua/gdbm.git/tree/
 
 extra:
   recipe-maintainers:
