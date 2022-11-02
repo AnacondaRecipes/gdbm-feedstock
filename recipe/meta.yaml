@@ -47,6 +47,13 @@ about:
   summary: >
     A library of database functions that use extensible hashing and works
     similar to the standard UNIX dbm functions.
+  description: |
+    GNU dbm (or GDBM, for short) is a library of database functions that
+    use extensible hashing and work similar to the standard UNIX dbm. These
+    routines are provided to a programmer needing to create and manipulate
+    a hashed database.
+  license_url: https://git.gnu.org.ua/gdbm.git/tree/COPYING
+  doc_source_url: https://git.gnu.org.ua/gdbm.git/tree/
   doc_url: https://git.gnu.org.ua/gdbm.git/tree/
   dev_url: https://git.gnu.org.ua/gdbm.git/tree/
 
